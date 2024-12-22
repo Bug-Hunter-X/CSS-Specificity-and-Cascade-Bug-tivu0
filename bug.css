@@ -1,0 +1,13 @@
+The following CSS code has an uncommon error related to the specificity of selectors and the cascade:
+
+```css
+div p {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+```
+
+The expected behavior is that all paragraphs (`<p>`) should be red. However, due to the specificity of the first selector (`div p`), paragraphs nested inside a `div` element will be blue, while paragraphs outside a `div` will be red. This demonstrates a subtle interaction between selector specificity and the CSS cascade.
