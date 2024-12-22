@@ -1,0 +1,25 @@
+The solution is to adjust the CSS to ensure that the desired styles are applied consistently regardless of nesting. One approach is to use more specific selectors or to use the `!important` flag (though generally discouraged):
+
+```css
+div p {
+  color: blue !important;
+}
+
+p {
+  color: red;
+}
+```
+
+Another approach, and generally preferred for maintainability and readability, would be to refactor the CSS and ensure that the selector for paragraphs is more specific to the desired outcome.
+
+For example, if only the paragraphs inside the `div` should be blue, this code is preferred:
+
+```css
+div > p {
+  color: blue;
+}
+p {
+  color: red;
+}
+```
+The `>` ensures that only the direct children are selected.
